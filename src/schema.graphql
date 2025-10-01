@@ -1,0 +1,51 @@
+# Book type representing a book in the bookstore
+type Book {
+  id: ID!
+  title: String!
+  price: Float!
+  publishedYear: Int!
+  author: Author!  # Relationship to Author
+}
+
+# Author type representing a book author
+type Author {
+  id: ID!
+  name: String!
+  country: String
+  books: [Book!]!  # One-to-many relationship with Book
+}
+
+# Query type defines all the read operations
+type Query {
+  # Get all books
+  getAllBooks: [Book!]!
+  # Get a single book by ID
+  getBookById(id: ID!): Book
+  # Get all authors
+  getAllAuthors: [Author!]!
+  # Get a single author by ID
+  getAuthorById(id: ID!): Author
+}
+
+# Mutation type defines all the write operations
+type Mutation {
+  # Add a new book
+  addBook(
+    title: String!,
+    price: Float!,
+    publishedYear: Int!,
+    authorId: ID!
+  ): Book!
+  
+  # Update a book's price
+  updateBookPrice(
+    id: ID!,
+    price: Float!
+  ): Book!
+  
+  # Add a new author
+  addAuthor(
+    name: String!,
+    country: String
+  ): Author!
+}
