@@ -1,0 +1,20 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "description": "A GraphQL API for a Bookstore",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.25.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "graphql": "^15.8.0",
+    "graphql-tag": "^2.12.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
